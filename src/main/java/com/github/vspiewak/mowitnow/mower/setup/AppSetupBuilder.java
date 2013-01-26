@@ -4,8 +4,8 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 public interface AppSetupBuilder {
 
-   public void parse() throws ParseException;
+   void parse() throws ParseException;
 
-   public AppSetup getSetup();
+   AppSetup getSetup();
 
 }

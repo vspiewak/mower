@@ -22,8 +22,8 @@ public class AppSteps extends Embedder {
 
    private static final Logger log = LoggerFactory.getLogger(AppSteps.class);
 
-   AppSetup setup = new AppSetup();
-   MowerSetup currentMowerSetup;
+   private AppSetup setup = new AppSetup();
+   private MowerSetup currentMowerSetup;
 
    @Given("a lawn with a top right corner at $x $y")
    @Alias("a lawn $x $y")
@@ -39,13 +39,13 @@ public class AppSteps extends Embedder {
 
       currentMowerSetup = new MowerSetup();
       currentMowerSetup.setInitialPosition(newPosition(x, y));
-      currentMowerSetup.setInitialOrientation(Orientation.parseOrientation(String
-            .valueOf(o)));
+      currentMowerSetup.setInitialOrientation(Orientation.parseOrientation(o));
    }
 
    @When("a list of commands $value")
    @Alias("doing $value")
-   public void givenAListOfCommands(@Named("value") String value) throws ParseException {
+   public void givenAListOfCommands(@Named("value") String value)
+           throws ParseException {
 
       currentMowerSetup.setCommands(MowerCommand.parseCommands(value));
       setup.addMowerSetup(currentMowerSetup);

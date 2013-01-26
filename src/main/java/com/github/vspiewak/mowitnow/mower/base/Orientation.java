@@ -2,11 +2,25 @@ package com.github.vspiewak.mowitnow.mower.base;
 
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * The Orientation class represent cardinal positions.
+ * It's implemented using degree to avoid massive if block and enable support for: 
+ * <pre>
+ * NORTH_EAST(45, "NE") 
+ * NORTH_WEST(135, "NW") 
+ * SOUTH_WEST(225, "SW") 
+ * SOUTH_EAST(315, "SE")
+ * </pre>
+ *  
+ * @author Vincent Spiewak <vspiewak@gmail.com>
+ * @since 1.0
+ */
 public enum Orientation {
 
    EAST(0, "E"), NORTH(90, "N"), WEST(180, "W"), SOUTH(270, "S");
-   /* NORTH_EAST(45, "NE"), NORTH_WEST(135, "NW"), SOUTH_WEST(225, "SW"), SOUTH_EAST(315, "SE"); */
 
+   private static final int MAX_DEGREE = 360;
+   
    private int degree;
    private String code;
 
@@ -29,7 +43,7 @@ public enum Orientation {
          throw new IllegalArgumentException("rotation can't be null");
       }
 
-      int newDegree = (360 + this.degree + rotation.getDegree()) % 360;
+      int newDegree = (MAX_DEGREE + this.degree + rotation.getDegree()) % MAX_DEGREE;
       return fromDegree(newDegree);
 
    }

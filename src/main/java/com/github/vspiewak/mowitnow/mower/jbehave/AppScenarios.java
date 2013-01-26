@@ -12,13 +12,18 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.CandidateSteps;
 import org.jbehave.core.steps.InstanceStepsFactory;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /* JUnit-runnable JBehave stories */
 public class AppScenarios extends JUnitStory {
 
-   /* this requires you to start maven from the project directory */
-   private static final String JBEHAVE_STORIES_URL = "file://"
-         + System.getProperty("user.dir") + "/src/test/resources/stories/";
+   private static final Logger log = LoggerFactory.getLogger(AppScenarios.class);
+   
+   /* this requires to start maven from the project directory */
+   private static final String JBEHAVE_STORIES_URL = "file://"                   
+                                                   + System.getProperty("user.dir")
+                                                   + "/src/test/resources/stories/";
 
    @Override
    public Configuration configuration() {
@@ -26,11 +31,12 @@ public class AppScenarios extends JUnitStory {
       try {
          storyURL = new URL(JBEHAVE_STORIES_URL);
       } catch (MalformedURLException e) {
-         e.printStackTrace();
+         log.error("JBehave Stories Malformed URI: ", e);
       }
       return new MostUsefulConfiguration().useStoryLoader(
             new LoadFromRelativeFile(storyURL)).useStoryReporterBuilder(
-            new StoryReporterBuilder().withDefaultFormats());
+                        new StoryReporterBuilder().
+                           withDefaultFormats());
    }
 
    @Override
@@ -41,7 +47,7 @@ public class AppScenarios extends JUnitStory {
 
    @Test
    @Override
-   public void run() throws Throwable {
+   public void run() throws Throwable { //NO PMD
       super.run();
    }
 }

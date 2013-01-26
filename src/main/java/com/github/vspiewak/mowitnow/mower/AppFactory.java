@@ -9,8 +9,11 @@ import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.domain.XEngine;
 
-public class AppFactory {
+public final class AppFactory {
 
+   /* hide utility class constructor */
+   private AppFactory() { }
+   
    public static Position newPosition(int x, int y) {
       return new Position(x, y);
    }

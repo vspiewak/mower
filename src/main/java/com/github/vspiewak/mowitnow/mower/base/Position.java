@@ -64,21 +64,16 @@ public class Position {
 
    @Override
    public boolean equals(Object o) {
-      if (this == o)
-         return true;
-      if (o == null || getClass() != o.getClass())
-         return false;
-
+      if (this == o) { return true; }
+      if (o == null || getClass() != o.getClass()) { return false; }
+      
       Position position = (Position) o;
-
       return (x == position.x && y == position.y);
    }
 
    @Override
    public int hashCode() {
-      int result = x;
-      result = 31 * result + y;
-      return result;
+      return (17 + x) * (31 + y); //NO PMD
    }
 
    @Override

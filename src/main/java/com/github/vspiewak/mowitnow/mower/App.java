@@ -10,7 +10,7 @@ import com.github.vspiewak.mowitnow.mower.setup.AppSetup;
 import com.github.vspiewak.mowitnow.mower.setup.AppSetupBuilder;
 import com.github.vspiewak.mowitnow.mower.setup.AppSetupFileBuilder;
 
-public class App {
+public final class App {
 
    /* UTF-8 only */
    public static final String CHARSET_UTF_8 = "UTF-8";
@@ -21,9 +21,12 @@ public class App {
    public static final int EXIT_FAILURE_CANT_READ_FILE = 2;
    private static final int EXIT_FAILURE_PARSE_EXCEPTION = 3;
 
-   /* Printed help */
-   private static String HELP_USAGE = "Mower: usage ...";
+   /* printed help */
+   private static final String HELP_USAGE = "Mower: usage ...";
 
+   /* hide utility class constructor */
+   private App() { }
+   
    public static int run(String... args) {
 
       Logger log = LoggerFactory.getLogger(App.class);
