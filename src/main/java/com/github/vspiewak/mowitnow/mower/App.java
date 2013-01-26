@@ -12,9 +12,6 @@ import com.github.vspiewak.mowitnow.mower.setup.AppSetupFileBuilder;
 
 public final class App {
 
-   /* UTF-8 only */
-   public static final String CHARSET_UTF_8 = "UTF-8";
-
    /* exit status */
    public static final int EXIT_SUCCESS = 0;
    public static final int EXIT_FAILURE_BAD_ARGS = 1;
