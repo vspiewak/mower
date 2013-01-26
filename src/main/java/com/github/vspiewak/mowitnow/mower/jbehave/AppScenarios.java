@@ -47,7 +47,7 @@ public class AppScenarios extends JUnitStory {
 
    @Test
    @Override
-   public void run() throws Throwable { //NO PMD
+   public void run() throws Throwable {
       super.run();
    }
 }

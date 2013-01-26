@@ -73,7 +73,11 @@ public class Position {
 
    @Override
    public int hashCode() {
-      return (17 + x) * (31 + y); //NO PMD
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + x;
+      result = prime * result + y;
+      return result;
    }
 
    @Override

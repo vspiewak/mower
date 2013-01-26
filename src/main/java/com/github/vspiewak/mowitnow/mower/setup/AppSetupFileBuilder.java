@@ -60,9 +60,9 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
                /* even line: mower init */
             } else if (even) {
 
-               //TODO: fix this parsing
-               Position p = Position.parsePosition(line.substring(0, 3));
-               Orientation o = Orientation.parseOrientation(String.valueOf(line.charAt(4)));
+               int lastWhitespace = line.lastIndexOf(' ');
+               Position p = Position.parsePosition(line.substring(0, lastWhitespace));
+               Orientation o = Orientation.parseOrientation(line.substring(lastWhitespace).trim());
 
                mowerSetup = new MowerSetup();
                mowerSetup.setInitialPosition(p);
