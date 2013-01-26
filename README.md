@@ -24,3 +24,8 @@ TODO: write documentation
 You can view JBehave reports at:
 * target/jbehave/view/index.html
 * target/jbehave/view/reports.html
+
+
+## Javadocs & Sources
+A mower-<version>-sources.jar and mower-<version>-javadoc.jar are generated at package lifecycle.
+You can use them with your favorite IDE. 

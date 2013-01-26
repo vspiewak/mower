@@ -58,6 +58,8 @@
         <!-- Plugins versions -->
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <maven.jar.plugin>2.4</maven.jar.plugin>
+        <maven.source.plugin>2.2.1</maven.source.plugin>
+        <maven.javadoc.plugin>2.9</maven.javadoc.plugin>        
         <maven.shade.plugin>2.0</maven.shade.plugin>
         <jbehave.maven.plugin>3.1.2</jbehave.maven.plugin>
         <jbehave.site.plugin>3.1.1</jbehave.site.plugin>
@@ -141,6 +143,39 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+
+            <!-- Maven sources -->
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-source-plugin</artifactId>
+               <version>${maven.source.plugin}</version>
+               <executions>
+                  <execution>
+                     <id>attach-sources</id>
+                     <goals>
+                        <goal>jar</goal>
+                     </goals>
+                  </execution>
+               </executions>
+            </plugin>
+         
+            <!-- Maven Javadoc -->         
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-javadoc-plugin</artifactId>
+               <version>${maven.javadoc.plugin}</version>
+               <configuration>
+                  <show>public</show>
+               </configuration>
+               <executions>
+                  <execution>
+                     <id>attach-javadoc</id>
+                     <goals>
+                        <goal>jar</goal>
+                     </goals>                  
+                  </execution>
+               </executions>
             </plugin>
 
             <!-- Maven Shade -->
