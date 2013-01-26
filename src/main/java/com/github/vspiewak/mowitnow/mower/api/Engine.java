@@ -4,14 +4,16 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 
 public interface Engine {
 
-	void init(Scene scene);
-	void clear();
-	
-	void attach(Vehicule vehicule);
-	void detach(Vehicule vehicule);
+   void init(Scene scene);
 
-    boolean canMove(Position p);
+   void clear();
 
-	Position update(Vehicule vehicule, Position newPosition);
+   void attach(Vehicule vehicule);
+
+   void detach(Vehicule vehicule);
+
+   boolean canMove(Position p);
+
+   Position update(Vehicule vehicule, Position newPosition);
 
 }

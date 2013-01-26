@@ -1,5 +1,8 @@
 package com.github.vspiewak.mowitnow.mower.domain;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.github.vspiewak.mowitnow.mower.api.Engine;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Move;
@@ -8,68 +11,74 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
 public class Mower implements Vehicule {
 
-    /* strongs rules: start and finish with a number, a single space, a number, a single space, N or S or E or W */
-    private static final Pattern PARSE_PATTERN = Pattern.compile("^(\\d+[ ]\\d+)[ ]([N|S|E|W])$");
+   /* strongs rules: 
+    * 
+    * start and finish with:
+    * - a number
+    * - a single space
+    * - a number
+    * - a single space
+    * - N or S or E or W 
+    */
+   private static final Pattern PARSE_PATTERN = Pattern.compile("^(\\d+[ ]\\d+)[ ]([N|S|E|W])$");
 
-	private Position position;
-	private Orientation orientation;
-	
-	private Engine engine = XEngine.get();
-	
-	public Mower(Position p, Orientation o) {
-		this.position = p;
-		this.orientation = o;
-	}
+   private Position position;
+   private Orientation orientation;
 
-    @Override
-	public Position getPosition() {
-		return this.position;
-	}
+   private Engine engine = XEngine.get();
 
-	@Override
-	public Orientation getOrientation() {
-		return this.orientation;
-	}
+   public Mower(Position p, Orientation o) {
+      this.position = p;
+      this.orientation = o;
+   }
 
-	@Override
-	public String print() {
-		return getPosition().getX() + " " + getPosition().getY() + " " + getOrientation().getCode();
-	}
+   @Override
+   public Position getPosition() {
+      return this.position;
+   }
 
-	@Override
-	public boolean move(Move m) {
-		Position nextPosition = getPosition().next(m, getOrientation());
-		this.position = engine.update(this, nextPosition);
-		return getPosition().equals(nextPosition);
-	}
+   @Override
+   public Orientation getOrientation() {
+      return this.orientation;
+   }
 
-	@Override
-	public void rotate(Rotation r) {
-		this.orientation = getOrientation().rotate(r);
-	}
+   @Override
+   public String print() {
+      return getPosition().getX() + " " + getPosition().getY() + " "
+            + getOrientation().getCode();
+   }
 
-    /* not used yet */
-    public static Mower parseMower(String s) throws ParseException {
+   @Override
+   public boolean move(Move m) {
+      Position nextPosition = getPosition().next(m, getOrientation());
+      this.position = engine.update(this, nextPosition);
+      return getPosition().equals(nextPosition);
+   }
 
-        Matcher m = PARSE_PATTERN.matcher(s);
+   @Override
+   public void rotate(Rotation r) {
+      this.orientation = getOrientation().rotate(r);
+   }
 
-		if (s != null && m.find()) {
-			Position p = Position.parsePosition(m.group(1));
-			Orientation o = Orientation.parseOrientation(m.group(2));
-			return new Mower(p, o);
-		}
+   /* not used yet */
+   public static Mower parseMower(String s) throws ParseException {
 
-		throw new ParseException("Parse Mower error: " + s);
-	}
+      Matcher m = PARSE_PATTERN.matcher(s);
 
-	@Override
-	public String toString() {
-		return print();
-	}
+      if (s != null && m.find()) {
+         Position p = Position.parsePosition(m.group(1));
+         Orientation o = Orientation.parseOrientation(m.group(2));
+         return new Mower(p, o);
+      }
+
+      throw new ParseException("Parse Mower error: " + s);
+   }
+
+   @Override
+   public String toString() {
+      return print();
+   }
 
 }

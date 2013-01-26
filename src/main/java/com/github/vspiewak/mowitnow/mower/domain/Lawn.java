@@ -5,16 +5,16 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 
 public class Lawn implements Scene {
 
-	private Position topRight;
-		
-	public Lawn(Position topRight) {
-		this.topRight = topRight;
-	}
+   private Position topRight;
 
-	@Override
-	public boolean canMove(Position p) {
-        return p.getX() >= 0 && p.getX() <= topRight.getX()
-                && p.getY() >= 0 && p.getY() <= topRight.getY();
-	}
+   public Lawn(Position topRight) {
+      this.topRight = topRight;
+   }
+
+   @Override
+   public boolean canMove(Position p) {
+      return p.getX() >= 0 && p.getX() <= topRight.getX() && p.getY() >= 0
+            && p.getY() <= topRight.getY();
+   }
 
 }

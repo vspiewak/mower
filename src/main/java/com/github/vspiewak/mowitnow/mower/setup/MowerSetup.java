@@ -7,33 +7,33 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 
 public class MowerSetup {
 
-	private Position initialPosition;
-	private Orientation initialOrientation;
-	
-	private List<MowerCommand> commands;
+   private Position initialPosition;
+   private Orientation initialOrientation;
 
-	public Position getInitialPosition() {
-		return initialPosition;
-	}
+   private List<MowerCommand> commands;
 
-	public void setInitialPosition(Position initialPosition) {
-		this.initialPosition = initialPosition;
-	}
+   public Position getInitialPosition() {
+      return initialPosition;
+   }
 
-	public Orientation getInitialOrientation() {
-		return initialOrientation;
-	}
+   public void setInitialPosition(Position initialPosition) {
+      this.initialPosition = initialPosition;
+   }
 
-	public void setInitialOrientation(Orientation initialOrientation) {
-		this.initialOrientation = initialOrientation;
-	}
+   public Orientation getInitialOrientation() {
+      return initialOrientation;
+   }
 
-	public List<MowerCommand> getCommands() {
-		return commands;
-	}
+   public void setInitialOrientation(Orientation initialOrientation) {
+      this.initialOrientation = initialOrientation;
+   }
 
-	public void setCommands(List<MowerCommand> commands) {
-		this.commands = commands;
-	}
-	
+   public List<MowerCommand> getCommands() {
+      return commands;
+   }
+
+   public void setCommands(List<MowerCommand> commands) {
+      this.commands = commands;
+   }
+
 }

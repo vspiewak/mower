@@ -2,15 +2,15 @@
 <configuration debug="false">
 
    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <Pattern>[%thread] %logger{36} - %msg%n</Pattern>
-        </encoder>
-    </appender>
+      <encoder>
+         <Pattern>[%thread] %logger{36} - %msg%n</Pattern>
+      </encoder>
+   </appender>
 
-    <logger name="com.github.vspiewak" level="debug" />
+   <logger name="com.github.vspiewak" level="debug" />
 
-    <root level="all">
-        <appender-ref ref="stdout" />
-    </root>
+   <root level="all">
+      <appender-ref ref="stdout" />
+   </root>
 
 </configuration>

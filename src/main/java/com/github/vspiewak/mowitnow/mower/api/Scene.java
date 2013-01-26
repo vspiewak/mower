@@ -4,6 +4,6 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 
 public interface Scene {
 
-	boolean canMove(Position p);
-	
+   boolean canMove(Position p);
+
 }

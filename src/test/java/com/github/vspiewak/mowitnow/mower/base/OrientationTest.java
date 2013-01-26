@@ -1,91 +1,96 @@
 package com.github.vspiewak.mowitnow.mower.base;
 
-import org.testng.annotations.Test;
-import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 import static org.fest.assertions.Assertions.assertThat;
+
+import org.testng.annotations.Test;
+
+import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 public class OrientationTest {
 
-    @Test
-    public void given_north_orientation_rotate_left_expect_west() {
+   @Test
+   public void given_north_orientation_rotate_left_expect_west() {
 
-        assertThat(Orientation.NORTH.rotate(Rotation.LEFT)).isEqualTo(Orientation.WEST);
+      assertThat(Orientation.NORTH.rotate(Rotation.LEFT)).isEqualTo(Orientation.WEST);
 
-    }
+   }
 
-    @Test
-    public void given_west_orientation_rotate_left_expect_south() {
+   @Test
+   public void given_west_orientation_rotate_left_expect_south() {
 
-        assertThat(Orientation.WEST.rotate(Rotation.LEFT)).isEqualTo(Orientation.SOUTH);
+      assertThat(Orientation.WEST.rotate(Rotation.LEFT)).isEqualTo(Orientation.SOUTH);
 
-    }
+   }
 
-    @Test
-    public void given_south_orientation_rotate_left_expect_east() {
+   @Test
+   public void given_south_orientation_rotate_left_expect_east() {
 
-        assertThat(Orientation.SOUTH.rotate(Rotation.LEFT)).isEqualTo(Orientation.EAST);
+      assertThat(Orientation.SOUTH.rotate(Rotation.LEFT)).isEqualTo(Orientation.EAST);
 
-    }
+   }
 
-    @Test
-    public void given_east_orientation_rotate_left_expect_north() {
+   @Test
+   public void given_east_orientation_rotate_left_expect_north() {
 
-        assertThat(Orientation.EAST.rotate(Rotation.LEFT)).isEqualTo(Orientation.NORTH);
+      assertThat(Orientation.EAST.rotate(Rotation.LEFT)).isEqualTo(Orientation.NORTH);
 
-    }
+   }
 
-    @Test
-    public void given_north_orientation_rotate_right_expect_east() {
+   @Test
+   public void given_north_orientation_rotate_right_expect_east() {
 
-        assertThat(Orientation.NORTH.rotate(Rotation.RIGHT)).isEqualTo(Orientation.EAST);
+      assertThat(Orientation.NORTH.rotate(Rotation.RIGHT)).isEqualTo(Orientation.EAST);
 
-    }
+   }
 
-    @Test
-    public void given_east_orientation_rotate_right_expect_south() {
+   @Test
+   public void given_east_orientation_rotate_right_expect_south() {
 
-        assertThat(Orientation.EAST.rotate(Rotation.RIGHT)).isEqualTo(Orientation.SOUTH);
+      assertThat(Orientation.EAST.rotate(Rotation.RIGHT)).isEqualTo(Orientation.SOUTH);
 
-    }
+   }
 
-    @Test
-    public void given_south_orientation_rotate_right_expect_weast() {
+   @Test
+   public void given_south_orientation_rotate_right_expect_weast() {
 
-        assertThat(Orientation.SOUTH.rotate(Rotation.RIGHT)).isEqualTo(Orientation.WEST);
+      assertThat(Orientation.SOUTH.rotate(Rotation.RIGHT)).isEqualTo(Orientation.WEST);
 
-    }
+   }
 
-    @Test
-    public void given_west_orientation_rotate_right_expect_north() {
+   @Test
+   public void given_west_orientation_rotate_right_expect_north() {
 
-        assertThat(Orientation.WEST.rotate(Rotation.RIGHT)).isEqualTo(Orientation.NORTH);
+      assertThat(Orientation.WEST.rotate(Rotation.RIGHT)).isEqualTo(Orientation.NORTH);
 
-    }
+   }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void given_an_orientation_rotate_null_expect_exception() {
+   @Test(expectedExceptions = IllegalArgumentException.class)
+   public void given_an_orientation_rotate_null_expect_exception() {
 
-        Orientation.NORTH.rotate(null);
-    }
+      Orientation.NORTH.rotate(null);
+   }
 
-    @Test
-    public void given_a_string_containing_n_expect_parse_return_orientation_north() throws ParseException {
+   @Test
+   public void given_a_string_containing_n_expect_parse_return_orientation_north()
+         throws ParseException {
 
-        assertThat(Orientation.parseOrientation("N")).isEqualTo(Orientation.NORTH);
+      assertThat(Orientation.parseOrientation("N")).isEqualTo(Orientation.NORTH);
 
-    }
+   }
 
-    @Test(expectedExceptions = ParseException.class)
-    public void given_a_string_containing_hello_expect_parse_return_parse_exception() throws ParseException {
+   @Test(expectedExceptions = ParseException.class)
+   public void given_a_string_containing_hello_expect_parse_return_parse_exception()
+         throws ParseException {
 
-        Orientation.parseOrientation("hello");
+      Orientation.parseOrientation("hello");
 
-    }
+   }
 
-    @Test(expectedExceptions = ParseException.class)
-    public void given_a_string_null_expect_parse_return_parse_exception() throws ParseException {
+   @Test(expectedExceptions = ParseException.class)
+   public void given_a_string_null_expect_parse_return_parse_exception()
+         throws ParseException {
 
-        Orientation.parseOrientation(null);
+      Orientation.parseOrientation(null);
 
-    }
+   }
 }

@@ -16,32 +16,32 @@ import org.junit.Test;
 /* JUnit-runnable JBehave stories */
 public class AppScenarios extends JUnitStory {
 
-    /* this requires you to start maven from the project directory */
-    private static final String JBEHAVE_STORIES_URL = "file://"
-            + System.getProperty("user.dir")
-            + "/src/test/resources/stories/";
+   /* this requires you to start maven from the project directory */
+   private static final String JBEHAVE_STORIES_URL = "file://"
+         + System.getProperty("user.dir") + "/src/test/resources/stories/";
 
-    @Override
-    public Configuration configuration() {
-        URL storyURL = null;
-        try {
-            storyURL = new URL(JBEHAVE_STORIES_URL);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        return new MostUsefulConfiguration().useStoryLoader(
-                new LoadFromRelativeFile(storyURL)).useStoryReporterBuilder(
-                new StoryReporterBuilder().withDefaultFormats());
-    }
+   @Override
+   public Configuration configuration() {
+      URL storyURL = null;
+      try {
+         storyURL = new URL(JBEHAVE_STORIES_URL);
+      } catch (MalformedURLException e) {
+         e.printStackTrace();
+      }
+      return new MostUsefulConfiguration().useStoryLoader(
+            new LoadFromRelativeFile(storyURL)).useStoryReporterBuilder(
+            new StoryReporterBuilder().withDefaultFormats());
+   }
 
-    @Override
-    public List<CandidateSteps> candidateSteps() {
-        return new InstanceStepsFactory(configuration(), new AppSteps()).createCandidateSteps();
-    }
+   @Override
+   public List<CandidateSteps> candidateSteps() {
+      return new InstanceStepsFactory(configuration(), new AppSteps())
+            .createCandidateSteps();
+   }
 
-    @Test
-    @Override
-    public void run() throws Throwable {
-        super.run();
-    }
+   @Test
+   @Override
+   public void run() throws Throwable {
+      super.run();
+   }
 }
