@@ -13,7 +13,7 @@ TODO: write documentation
 
     mvn clean package
     cd target
-    java -jar mower-0.0.1-SNAPSHOT.jar src/test/resources/commands.txt
+    java -jar mower-<version>.jar src/test/resources/commands.txt
 
 
 ## Integration tests
