@@ -40,7 +40,7 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-      <java.main.class>com.github.vspiewak.mowitnow.mower.App</java.main.class>
+      <java.main.class>com.github.vspiewak.mowitnow.mower.app.App</java.main.class>
       <jbehave.output.dir>jbehave/view</jbehave.output.dir>
 
       <!-- Dependencies versions -->
