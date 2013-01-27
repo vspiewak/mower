@@ -6,7 +6,6 @@ package com.github.vspiewak.mowitnow.mower.base;
  * It may also support <code>LEFT_HALF(45), RIGHT_HALF(-45)</code>.
  *  
  * @author Vincent Spiewak
- * @see Vehicule
  * @since 1.0
  */
 public enum Rotation {

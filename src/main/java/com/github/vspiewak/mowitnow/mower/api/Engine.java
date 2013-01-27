@@ -7,8 +7,6 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
  * It's responsible for the physics (like collisions) and rendering.
  * 
  * @author Vincent Spiewak
- * @see Scene
- * @see Vehicule
  * @since 1.0
  */
 public interface Engine {
@@ -50,11 +48,11 @@ public interface Engine {
     * @param position
     * @return true if the position is valid
     */
-   boolean canMove(Position p);
+   boolean canMove(Position position);
 
    /**
     * Update a <code>Position</code> in the engine.
-    * It return the updated position after physics considerations.
+    * It return the updated position after physics considerations (collision/bounce)
     *  
     * @param vehicule
     * @param newPosition

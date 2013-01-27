@@ -33,7 +33,7 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
    }
 
    /**
-    * Parse the file according to the Specifications format
+    * Parse the file according to the specifications format
     */
    @Override
    public void parse() throws ParseException {

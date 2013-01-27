@@ -3,7 +3,7 @@ package com.github.vspiewak.mowitnow.mower.setup;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.vspiewak.mowitnow.mower.base.Move;
+import com.github.vspiewak.mowitnow.mower.base.Direction;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
@@ -44,7 +44,7 @@ public enum MowerCommand {
          mower.rotate(Rotation.RIGHT);
          break;
       case MOVE_FORWARD:
-         mower.move(Move.FORWARD);
+         mower.move(Direction.FORWARD);
          break;
       default:
          throw new IllegalArgumentException("Mower command unsupported: " + command);

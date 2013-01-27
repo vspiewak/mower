@@ -18,35 +18,30 @@ public class PositionTest {
    @Test
    public void given_position_1_2_north_next_forward_expect_1_3() {
 
-      assertThat(newPosition(1, 2).next(Move.FORWARD, Orientation.NORTH)).isEqualTo(
-            newPosition(1, 3));
+      assertThat(newPosition(1, 2).next(Direction.FORWARD, Orientation.NORTH)).isEqualTo(newPosition(1, 3));
    }
 
    @Test
    public void given_position_1_2_south_next_forward_expect_1_1() {
 
-      assertThat(newPosition(1, 2).next(Move.FORWARD, Orientation.SOUTH)).isEqualTo(
-            newPosition(1, 1));
+      assertThat(newPosition(1, 2).next(Direction.FORWARD, Orientation.SOUTH)).isEqualTo(newPosition(1, 1));
    }
 
    @Test
    public void given_position_1_2_east_next_forward_expect_2_2() {
 
-      assertThat(newPosition(1, 2).next(Move.FORWARD, Orientation.EAST)).isEqualTo(
-            newPosition(2, 2));
+      assertThat(newPosition(1, 2).next(Direction.FORWARD, Orientation.EAST)).isEqualTo(newPosition(2, 2));
    }
 
    @Test
    public void given_position_1_2_west_next_forward_expect_0_2() {
 
-      assertThat(newPosition(1, 2).next(Move.FORWARD, Orientation.WEST)).isEqualTo(
-            newPosition(0, 2));
+      assertThat(newPosition(1, 2).next(Direction.FORWARD, Orientation.WEST)).isEqualTo(newPosition(0, 2));
 
    }
 
    @Test
-   public void given_a_string_containing_10_300_expect_parse_return_position_10_300()
-         throws ParseException {
+   public void given_a_string_containing_10_300_expect_parse_return_position_10_300() throws ParseException {
 
       assertThat(Position.parsePosition("10 300")).isEqualTo(newPosition(10, 300));
 
@@ -60,8 +55,7 @@ public class PositionTest {
    }
 
    @Test(expectedExceptions = ParseException.class)
-   public void given_a_string_null_expect_parse_return_parse_exception()
-         throws ParseException {
+   public void given_a_string_null_expect_parse_return_parse_exception() throws ParseException {
 
       Position.parsePosition(null);
 
@@ -70,7 +64,7 @@ public class PositionTest {
    @Test(expectedExceptions = IllegalArgumentException.class)
    public void given_position_0_0_orientation_null_next_forward_expect_exception() {
 
-      newPosition(0, 0).next(Move.FORWARD, null);
+      newPosition(0, 0).next(Direction.FORWARD, null);
 
    }
 

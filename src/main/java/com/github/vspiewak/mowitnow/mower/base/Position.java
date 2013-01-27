@@ -9,7 +9,6 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * This class represent a position on a <code>Scene<code>.
  *  
  * @author Vincent Spiewak
- * @see Scene
  * @since 1.0
  */
 public class Position {
@@ -33,10 +32,10 @@ public class Position {
       return y;
    }
 
-   public Position next(Move move, Orientation orientation) {
+   public Position next(Direction direction, Orientation orientation) {
 
-      if (move == null) {
-         throw new IllegalArgumentException("Unknown move: " + move);
+      if (direction == null) {
+         throw new IllegalArgumentException("Unknown direction: " + direction);
       }
 
       if (orientation == null) {
@@ -45,8 +44,8 @@ public class Position {
 
       /* Just some maths */
       double theta = Math.toRadians(orientation.getDegree());
-      int newX = this.x + (int) (move.getDistance() * Math.round(Math.cos(theta)));
-      int newY = this.y + (int) (move.getDistance() * Math.round(Math.sin(theta)));
+      int newX = this.x + (int) (direction.getDistance() * Math.round(Math.cos(theta)));
+      int newY = this.y + (int) (direction.getDistance() * Math.round(Math.sin(theta)));
       return new Position(newX, newY);
 
    }

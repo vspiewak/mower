@@ -12,7 +12,8 @@ import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 
 /**
- * The XEngine (stand for X***a) is a simple <code>Engine</code> handling scene bounds and collisions.
+ * The XEngine (stand for X***a ;) is a simple <code>Engine</code>
+ * handling scene bounds and collisions.
  * 
  * @author Vincent Spiewak
  * @since 1.0

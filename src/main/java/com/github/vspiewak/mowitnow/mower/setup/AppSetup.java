@@ -3,9 +3,6 @@ package com.github.vspiewak.mowitnow.mower.setup;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.github.vspiewak.mowitnow.mower.api.Engine;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.domain.Lawn;
@@ -19,8 +16,6 @@ import com.github.vspiewak.mowitnow.mower.domain.XEngine;
  * @since 1.0
  */
 public class AppSetup {
-
-   private static final Logger LOG = LoggerFactory.getLogger(AppSetup.class);
 
    /* CRLF evilness... */
    public static final String LINE_SEPARATOR = System.getProperty("line.separator");

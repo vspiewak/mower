@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import com.github.vspiewak.mowitnow.mower.api.Engine;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
-import com.github.vspiewak.mowitnow.mower.base.Move;
+import com.github.vspiewak.mowitnow.mower.base.Direction;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
@@ -51,8 +51,8 @@ public class Mower implements Vehicule {
    }
 
    @Override
-   public boolean move(Move m) {
-      Position nextPosition = getPosition().next(m, getOrientation());
+   public boolean move(Direction direction) {
+      Position nextPosition = getPosition().next(direction, getOrientation());
       this.position = engine.update(this, nextPosition);
       return getPosition().equals(nextPosition);
    }

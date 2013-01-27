@@ -8,10 +8,8 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * <br>
  * It may also support 
  * <code>
- * NORTH_EAST(45, "NE"), 
- * NORTH_WEST(135, "NW"), 
- * SOUTH_WEST(225, "SW"), 
- * SOUTH_EAST(315, "SE").
+ * NORTH_EAST(45,  "NE"), NORTH_WEST(135, "NW"), 
+ * SOUTH_WEST(225, "SW"), SOUTH_EAST(315, "SE").
  * </code>
  * 
  * @author Vincent Spiewak

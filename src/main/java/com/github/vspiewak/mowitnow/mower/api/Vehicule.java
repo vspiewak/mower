@@ -1,6 +1,6 @@
 package com.github.vspiewak.mowitnow.mower.api;
 
-import com.github.vspiewak.mowitnow.mower.base.Move;
+import com.github.vspiewak.mowitnow.mower.base.Direction;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 
 /**
@@ -8,15 +8,12 @@ import com.github.vspiewak.mowitnow.mower.base.Rotation;
  * with <code>Move</code> and <code>Rotation</code> capabilities.
  * 
  * @author Vincent Spiewak
- * @see Element
- * @see Move
- * @see Rotation
  * @since 1.0
  */
 public interface Vehicule extends Element {
 
-   boolean move(Move m);
+   boolean move(Direction direction);
 
-   void rotate(Rotation r);
+   void rotate(Rotation rotation);
 
 }

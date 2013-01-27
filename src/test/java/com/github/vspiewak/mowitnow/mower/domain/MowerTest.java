@@ -8,7 +8,7 @@ import static org.fest.assertions.Assertions.assertThat;
 import org.testng.annotations.Test;
 
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
-import com.github.vspiewak.mowitnow.mower.base.Move;
+import com.github.vspiewak.mowitnow.mower.base.Direction;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
@@ -52,7 +52,7 @@ public class MowerTest {
 
       Vehicule mower = newMower(2, 2, Orientation.NORTH);
       setup(5, 5, mower);
-      mower.move(Move.FORWARD);
+      mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(2, 3));
 
@@ -63,7 +63,7 @@ public class MowerTest {
 
       Vehicule mower = newMower(0, 0, Orientation.SOUTH);
       setup(5, 5, mower);
-      mower.move(Move.FORWARD);
+      mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(0, 0));
 
@@ -74,7 +74,7 @@ public class MowerTest {
 
       Vehicule mower = newMower(5, 3, Orientation.EAST);
       setup(5, 5, mower);
-      mower.move(Move.FORWARD);
+      mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(5, 3));
 
@@ -85,7 +85,7 @@ public class MowerTest {
 
       Vehicule mower = newMower(4, 5, Orientation.NORTH);
       setup(5, 5, mower);
-      mower.move(Move.FORWARD);
+      mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(4, 5));
 

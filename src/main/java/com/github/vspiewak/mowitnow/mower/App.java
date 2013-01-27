@@ -1,5 +1,7 @@
 package com.github.vspiewak.mowitnow.mower;
 
+import static com.github.vspiewak.mowitnow.mower.AppFactory.newSetupFileBuilder;
+
 import java.io.File;
 
 import org.slf4j.Logger;
@@ -8,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 import com.github.vspiewak.mowitnow.mower.setup.AppSetup;
 import com.github.vspiewak.mowitnow.mower.setup.AppSetupBuilder;
-import com.github.vspiewak.mowitnow.mower.setup.AppSetupFileBuilder;
 
 /**
  * This is the main entry for the application.
@@ -35,12 +36,12 @@ public final class App {
    /**
     * Run the application
     * 
-    * @param arguments from command line
+    * @param args from command line
     * @return exit status
     */
    public static int run(String... args) {
 
-            /* print help if bad args (double check) */
+      /* print help if bad args (double check) */
       if (args.length != 1 || args[0] == null) {
 
          LOG.info(HELP_USAGE);
@@ -60,7 +61,7 @@ public final class App {
       /* parse file */
       try {
 
-         AppSetupBuilder build = new AppSetupFileBuilder(file);
+         AppSetupBuilder build = newSetupFileBuilder(file);
          build.parse();
 
          AppSetup setup = build.getSetup();

@@ -1,5 +1,7 @@
 package com.github.vspiewak.mowitnow.mower;
 
+import java.io.File;
+
 import com.github.vspiewak.mowitnow.mower.api.Engine;
 import com.github.vspiewak.mowitnow.mower.api.Scene;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
@@ -8,6 +10,8 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.domain.XEngine;
+import com.github.vspiewak.mowitnow.mower.setup.AppSetupBuilder;
+import com.github.vspiewak.mowitnow.mower.setup.AppSetupFileBuilder;
 
 /**
  * Application Factory providing facilities for building components
@@ -50,6 +54,10 @@ public final class AppFactory {
       for (Vehicule vehicule : vehicules) {
          XEngine.get().attach(vehicule);
       }
+   }
+   
+   public static AppSetupBuilder newSetupFileBuilder(File file) {
+      return new AppSetupFileBuilder(file);
    }
    
    /* fattened versions */

@@ -77,24 +77,21 @@ public class OrientationTest {
    }
 
    @Test
-   public void given_a_string_containing_n_expect_parse_return_orientation_north()
-         throws ParseException {
+   public void given_a_string_containing_n_expect_parse_return_orientation_north() throws ParseException {
 
       assertThat(Orientation.parseOrientation("N")).isEqualTo(Orientation.NORTH);
 
    }
 
    @Test(expectedExceptions = ParseException.class)
-   public void given_a_string_containing_hello_expect_parse_return_parse_exception()
-         throws ParseException {
+   public void given_a_string_containing_hello_expect_parse_return_parse_exception() throws ParseException {
 
       Orientation.parseOrientation("hello");
 
    }
 
    @Test(expectedExceptions = ParseException.class)
-   public void given_a_string_null_expect_parse_return_parse_exception()
-         throws ParseException {
+   public void given_a_string_null_expect_parse_return_parse_exception() throws ParseException {
 
       Orientation.parseOrientation(null);
 

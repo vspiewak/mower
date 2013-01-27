@@ -16,6 +16,6 @@ public interface Scene {
     * @param position
     * @return true if valid
     */
-   boolean canMove(Position p);
+   boolean canMove(Position position);
 
 }
