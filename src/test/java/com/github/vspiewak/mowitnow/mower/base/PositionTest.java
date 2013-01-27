@@ -1,6 +1,6 @@
 package com.github.vspiewak.mowitnow.mower.base;
 
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newPosition;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
 import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.Test;

@@ -1,6 +1,6 @@
-package com.github.vspiewak.mowitnow.mower;
+package com.github.vspiewak.mowitnow.mower.app;
 
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newSetupFileBuilder;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newSetupFileBuilder;
 
 import java.io.File;
 

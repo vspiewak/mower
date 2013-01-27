@@ -1,8 +1,8 @@
 package com.github.vspiewak.mowitnow.mower.domain;
 
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newMower;
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newPosition;
-import static com.github.vspiewak.mowitnow.mower.AppFactory.setup;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newMower;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.setup;
 import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.Test;

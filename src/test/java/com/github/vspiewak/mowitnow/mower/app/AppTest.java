@@ -1,8 +1,9 @@
-package com.github.vspiewak.mowitnow.mower;
+package com.github.vspiewak.mowitnow.mower.app;
 
 import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.Test;
+
 
 /**
  * Tests for the <code>App</code> class.

@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower;
+package com.github.vspiewak.mowitnow.mower.app;
 
 import java.io.File;
 

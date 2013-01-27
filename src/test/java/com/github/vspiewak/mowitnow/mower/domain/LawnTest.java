@@ -1,7 +1,7 @@
 package com.github.vspiewak.mowitnow.mower.domain;
 
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newLawn;
-import static com.github.vspiewak.mowitnow.mower.AppFactory.newPosition;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newLawn;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
 import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.DataProvider;
