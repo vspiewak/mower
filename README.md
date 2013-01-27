@@ -45,8 +45,8 @@ You can use them with your favorite IDE.
 
 
 Sonar Statistics
------------------
-* 1238 lines 
-* 97,9 rules compliances
+----------------
+* 1242 lines 
+* 98,7 rules compliances (3 violations)
 * 80,2 units tests coverages
 * 100% tests success
