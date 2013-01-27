@@ -6,13 +6,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
     <!-- Maven Metadatas -->
     <groupId>com.github.vspiewak</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <artifactId>mower</artifactId>
     <packaging>jar</packaging>
-
 
     <!-- Project Metadatas -->
     <name>Mower</name>
@@ -20,13 +18,11 @@
     <url>https://github.com/vspiewak/</url>
     <inceptionYear>2012</inceptionYear>
 
-
     <!-- Organization Metadatas -->
     <organization>
         <name>Github</name>
         <url>http://github.com</url>
     </organization>
-
 
     <!-- Team Metadatas -->
     <developers>
@@ -59,6 +55,7 @@
         <!-- Plugins versions -->
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <maven.jar.plugin>2.4</maven.jar.plugin>
+        <maven.enforcer.plugin>1.0</maven.enforcer.plugin>
         <maven.source.plugin>2.2.1</maven.source.plugin>
         <maven.javadoc.plugin>2.9</maven.javadoc.plugin>        
         <maven.shade.plugin>2.0</maven.shade.plugin>
@@ -278,21 +275,21 @@
             <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-enforcer-plugin</artifactId>
-               <version>1.0</version>
+               <version>${maven.enforcer.plugin}</version>
                <executions>
                   <execution>
                      <id>enforce</id>
                      <goals>
                         <goal>enforce</goal>
                      </goals>
-                     <configuration>
-         
+                     <configuration>         
+  
                         <!-- Fail the build if a check fail -->
                         <fail>true</fail>
-         
+  
                         <!-- Stop on the first check fail -->
                         <failFast>true</failFast>
-         
+  
                         <!-- Rules: -->
                         <rules>
          
@@ -306,9 +303,9 @@
                               <version>${java.version}</version>
                            </requireJavaVersion>
          
-                           <!-- No snapshots Dependencies -->
+                           <!-- No snapshot Dependencies -->
                            <requireReleaseDeps>
-                              <message>snapshots dependency found</message>
+                              <message>snapshot dependency found</message>
                            </requireReleaseDeps>
          
                            <!-- Only one version per dependency -->
@@ -327,8 +324,8 @@
 
         </plugins>
 
-        <!-- Use this to fix m2e errors on unpack and enforce goal -->
-        <!-- Remove it if you don't use M2E in Eclipse/STS         -->
+        <!-- Fix m2e errors on unpack and enforce goals    -->
+        <!-- Remove it if you don't use M2E in Eclipse/STS -->
          <pluginManagement>
             <plugins>
                <!-- Ignore/Execute plugin execution -->
@@ -345,7 +342,6 @@
                                  <groupId>org.apache.maven.plugins</groupId>
                                  <artifactId>maven-dependency-plugin</artifactId>
                                  <versionRange>[1.0.0,)</versionRange>
-                                 <!-- unpack goal -->
                                  <goals>
                                     <goal>unpack</goal>
                                  </goals>
@@ -354,6 +350,7 @@
                                  <ignore />
                               </action>
                            </pluginExecution>
+                           <!-- enforcer plugin -->
                            <pluginExecution>
                               <pluginExecutionFilter>
                                  <groupId>org.apache.maven.plugins</groupId>
