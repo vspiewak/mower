@@ -4,12 +4,12 @@ This is a mower implementation, conform to the specifications provided.
 I chose an engine-based architecture instead of events/exceptions.
 It support collision detection.
 
+
 Dependencies
 ------------
 * JDK 1.6
 * Maven 3
 * SLF4J + LogBack
-* JUnit
 * TestNG
 * FestAsserts
 * JBehave
