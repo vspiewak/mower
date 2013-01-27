@@ -4,11 +4,21 @@ import com.github.vspiewak.mowitnow.mower.api.Scene;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 
 /**
- * The Lawn is a rectangular <code>Scene</code>.
- * Bottom left corner position is {0,0} 
- *  
+ * The Lawn is a rectangular <code>Scene</code>.<br>
+ * Bottom left corner position is {0,0}
+ * <p> 
+ * new Lawn(1,2) will produce:
+ * <pre>
+ * +-----+-----+
+ * | 0,2 | 1,2 |
+ * +-----+-----+
+ * | 0,1 | 1,1 |
+ * +-----+-----+
+ * | 0,0 | 1,0 |
+ * +-----+-----+
+ * </pre>
+ *
  * @author Vincent Spiewak
- * @see Scene
  * @since 1.0
  */
 public class Lawn implements Scene {
