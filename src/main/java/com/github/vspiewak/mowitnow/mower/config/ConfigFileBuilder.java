@@ -3,9 +3,6 @@ package com.github.vspiewak.mowitnow.mower.config;
 import java.io.File;
 import java.util.Scanner;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
@@ -17,8 +14,6 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * @since 1.0
  */
 public class ConfigFileBuilder implements ConfigBuilder {
-
-   private static final Logger LOG = LoggerFactory.getLogger(ConfigBuilder.class);
 
    /* UTF-8 only */
    public static final String CHARSET_UTF_8 = "UTF-8";
@@ -47,21 +42,18 @@ public class ConfigFileBuilder implements ConfigBuilder {
 
          int lineNumber = 1;
 
-         while (scanner.hasNextLine()) {
+         do {
 
             boolean even = lineNumber % 2 == 0;
-            String line = scanner.nextLine().trim();
+            String line = scanner.nextLine();
 
-            /* if empty line => stop */
-            if (line == null || line.isEmpty()) {
+            /* if nothing in the file */
+            if ((line == null || line.isEmpty()) && lineNumber == 1) {
 
-               /* if nothing in the file */
-               if (lineNumber == 1) {
-                  throw new ParseException("Nothing found in the file: " + file);
-               }
+                throw new ParseException("Nothing found in the file: " + file);
 
             /* first line: lawn top right position */
-            } else if (lineNumber == 1) {
+            } else if(lineNumber == 1) {
 
                Position lawnTopRight = Position.parsePosition(line);
                config.setLawnTopRightCorner(lawnTopRight);
@@ -85,10 +77,11 @@ public class ConfigFileBuilder implements ConfigBuilder {
             }
 
             lineNumber++;
-         }
+
+         } while(scanner.hasNextLine());
+
 
       } catch (Exception e) {
-         LOG.debug("error: {}", e.getStackTrace());
          throw new ParseException("Exception: " + e.getMessage());
       }
 

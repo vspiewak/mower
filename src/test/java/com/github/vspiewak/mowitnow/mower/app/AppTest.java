@@ -4,6 +4,9 @@ import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
+
 
 /**
  * Tests for the <code>App</code> class.
@@ -30,6 +33,18 @@ public class AppTest {
 
       assertThat(exitStatus).isEqualTo(App.EXIT_FAILURE_CANT_READ_FILE);
    }
+
+    @Test
+    public static void launch_app_with_empty_file() throws IOException {
+
+        File tempFile = File.createTempFile(App.class.getSimpleName(), ".txt");
+
+        String args[] = { tempFile.getAbsolutePath() };
+        int exitStatus = App.run(args);
+
+        assertThat(exitStatus).isEqualTo(App.EXIT_FAILURE_PARSE_EXCEPTION);
+
+    }
 
    @Test
    public static void launch_app_with_file() {
