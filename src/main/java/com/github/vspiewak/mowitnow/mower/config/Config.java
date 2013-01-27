@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower.setup;
+package com.github.vspiewak.mowitnow.mower.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +15,16 @@ import com.github.vspiewak.mowitnow.mower.domain.XEngine;
  * @author Vincent Spiewak
  * @since 1.0
  */
-public class AppSetup {
+public class Config {
 
    /* CRLF evilness... */
    public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
    private Position lawnTopRightCorner;
-   private List<MowerSetup> mowerSetupList;
+   private List<MowerConfig> mowerConfigList;
 
-   public AppSetup() {
-      mowerSetupList = new ArrayList<MowerSetup>();
+   public Config() {
+      mowerConfigList = new ArrayList<MowerConfig>();
    }
 
    public Position getLawnTopRightCorner() {
@@ -35,12 +35,12 @@ public class AppSetup {
       this.lawnTopRightCorner = lawnTopRightCorner;
    }
 
-   public List<MowerSetup> getMowerSetup() {
-      return mowerSetupList;
+   public List<MowerConfig> getMowerConfig() {
+      return mowerConfigList;
    }
 
-   public void addMowerSetup(MowerSetup setup) {
-      this.mowerSetupList.add(setup);
+   public void addMowerConfig(MowerConfig config) {
+      this.mowerConfigList.add(config);
    }
 
    public String execute() {
@@ -55,11 +55,11 @@ public class AppSetup {
       List<Mower> mowers = new ArrayList<Mower>();
 
       /* for each mowers */
-      for (MowerSetup mowerSetup : mowerSetupList) {
+      for (MowerConfig mowerConfig : mowerConfigList) {
 
          /* init mower */
-         Mower mower = new Mower(mowerSetup.getInitialPosition(),
-               mowerSetup.getInitialOrientation());
+         Mower mower = new Mower(mowerConfig.getInitialPosition(),
+               mowerConfig.getInitialOrientation());
 
          /* attach to the engine */
          engine.attach(mower);
@@ -68,7 +68,7 @@ public class AppSetup {
          mowers.add(mower);
 
          /* run every commands */
-         for (MowerCommand command : mowerSetup.getCommands()) {
+         for (MowerCommand command : mowerConfig.getCommands()) {
             command.execute(mower, command);
          }
 

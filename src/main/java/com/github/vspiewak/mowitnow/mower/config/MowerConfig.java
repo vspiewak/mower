@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower.setup;
+package com.github.vspiewak.mowitnow.mower.config;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
  * @author Vincent Spiewak
  * @since 1.0
  */
-public class MowerSetup {
+public class MowerConfig {
 
    private Position initialPosition;
    private Orientation initialOrientation;

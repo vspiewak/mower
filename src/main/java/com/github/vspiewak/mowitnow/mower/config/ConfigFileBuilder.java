@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower.setup;
+package com.github.vspiewak.mowitnow.mower.config;
 
 import java.io.File;
 import java.util.Scanner;
@@ -16,19 +16,19 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * @author Vincent Spiewak
  * @since 1.0
  */
-public class AppSetupFileBuilder implements AppSetupBuilder {
+public class ConfigFileBuilder implements ConfigBuilder {
 
-   private static final Logger LOG = LoggerFactory.getLogger(AppSetupBuilder.class);
+   private static final Logger LOG = LoggerFactory.getLogger(ConfigBuilder.class);
 
    /* UTF-8 only */
    public static final String CHARSET_UTF_8 = "UTF-8";
 
    private File file;
-   private AppSetup appSetup;
+   private Config config;
 
-   public AppSetupFileBuilder(File file) {
+   public ConfigFileBuilder(File file) {
 
-      this.appSetup = new AppSetup();
+      this.config = new Config();
       this.file = file;
    }
 
@@ -43,7 +43,7 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
 
          Scanner scanner = new Scanner(file, CHARSET_UTF_8);
 
-         MowerSetup mowerSetup = null;
+         MowerConfig mowerConfig = null;
 
          int lineNumber = 1;
 
@@ -60,28 +60,28 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
                   throw new ParseException("Nothing found in the file: " + file);
                }
 
-               /* first line: lawn top right position */
+            /* first line: lawn top right position */
             } else if (lineNumber == 1) {
 
                Position lawnTopRight = Position.parsePosition(line);
-               appSetup.setLawnTopRightCorner(lawnTopRight);
+               config.setLawnTopRightCorner(lawnTopRight);
 
-               /* even line: mower init */
+            /* even line: mower init */
             } else if (even) {
 
                int lastWhitespace = line.lastIndexOf(' ');
                Position p = Position.parsePosition(line.substring(0, lastWhitespace));
                Orientation o = Orientation.parseOrientation(line.substring(lastWhitespace).trim());
 
-               mowerSetup = new MowerSetup();
-               mowerSetup.setInitialPosition(p);
-               mowerSetup.setInitialOrientation(o);
+               mowerConfig = new MowerConfig();
+               mowerConfig.setInitialPosition(p);
+               mowerConfig.setInitialOrientation(o);
 
-               /* odd line: mower commands */
+            /* odd line: mower commands */
             } else {
 
-               mowerSetup.setCommands(MowerCommand.parseCommands(line));
-               appSetup.addMowerSetup(mowerSetup);
+               mowerConfig.setCommands(MowerCommand.parseCommands(line));
+               config.addMowerConfig(mowerConfig);
             }
 
             lineNumber++;
@@ -95,8 +95,8 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
    }
 
    @Override
-   public AppSetup getSetup() {
-      return this.appSetup;
+   public Config getConfig() {
+      return this.config;
    }
 
 }

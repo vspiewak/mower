@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower.setup;
+package com.github.vspiewak.mowitnow.mower.config;
 
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
@@ -8,7 +8,7 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * @author Vincent Spiewak
  * @since 1.0
  */
-public interface AppSetupBuilder {
+public interface ConfigBuilder {
 
    /**
     * Parse and build a configuration.
@@ -23,6 +23,6 @@ public interface AppSetupBuilder {
     * @return the configuration
     * @see #parse()
     */
-   AppSetup getSetup();
+   Config getConfig();
 
 }

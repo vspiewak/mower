@@ -2,9 +2,10 @@ package com.github.vspiewak.mowitnow.mower.domain;
 
 import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newMower;
 import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
-import static com.github.vspiewak.mowitnow.mower.app.AppFactory.setup;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.init;
 import static org.fest.assertions.Assertions.assertThat;
 
+import com.github.vspiewak.mowitnow.mower.app.AppFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -30,7 +31,7 @@ public class XEngineTest {
    public static void given_the_specification_case_expect_specified_result() {
 
       Engine engine = XEngine.get();
-      setup(5, 5);
+      init(5, 5);
 
       Vehicule mower1 = newMower(1, 2, Orientation.NORTH);
       engine.attach(mower1);
@@ -73,7 +74,7 @@ public class XEngineTest {
       Position oldPosition = newPosition(1, 2);
       Vehicule mower1 = newMower(oldPosition, Orientation.NORTH);
       Vehicule mower2 = newMower(1, 3, Orientation.NORTH);
-      setup(5, 5, mower1, mower2);
+      AppFactory.init(5, 5, mower1, mower2);
 
       mower1.move(Direction.FORWARD);
 
@@ -85,10 +86,10 @@ public class XEngineTest {
    public static void given_a_mower_1_2_N_add_another_at_1_2_N_expect_exception() {
 
       Position position = newPosition(1, 2);
-      setup(5,
-            5,
-            new Vehicule[] { newMower(position, Orientation.NORTH),
-                  newMower(position, Orientation.NORTH) });
+      AppFactory.init(5,
+              5,
+              new Vehicule[]{newMower(position, Orientation.NORTH),
+                      newMower(position, Orientation.NORTH)});
 
    }
 

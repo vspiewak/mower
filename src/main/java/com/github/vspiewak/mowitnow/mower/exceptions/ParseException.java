@@ -1,7 +1,7 @@
 package com.github.vspiewak.mowitnow.mower.exceptions;
 
 /**
- * This ParseException can be thrown during <code>AppSetup</code> parsing.
+ * This ParseException can be thrown during <code>Config</code> parsing.
  * 
  * @author Vincent Spiewak
  * @since 1.0

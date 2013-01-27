@@ -2,9 +2,9 @@ package com.github.vspiewak.mowitnow.mower.domain;
 
 import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newMower;
 import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
-import static com.github.vspiewak.mowitnow.mower.app.AppFactory.setup;
 import static org.fest.assertions.Assertions.assertThat;
 
+import com.github.vspiewak.mowitnow.mower.app.AppFactory;
 import org.testng.annotations.Test;
 
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
@@ -26,7 +26,7 @@ public class MowerTest {
 
       Position initialPosition = newPosition(2, 2);
       Vehicule mower = newMower(initialPosition, Orientation.NORTH);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.rotate(Rotation.LEFT);
 
       assertThat(mower.getOrientation()).isEqualTo(Orientation.WEST);
@@ -39,7 +39,7 @@ public class MowerTest {
 
       Position initialPosition = newPosition(2, 2);
       Vehicule mower = newMower(initialPosition, Orientation.EAST);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.rotate(Rotation.RIGHT);
 
       assertThat(mower.getOrientation()).isEqualTo(Orientation.SOUTH);
@@ -51,7 +51,7 @@ public class MowerTest {
    public void given_lawn_5_5_mower_2_2_north_forward_expect_2_3() {
 
       Vehicule mower = newMower(2, 2, Orientation.NORTH);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(2, 3));
@@ -62,7 +62,7 @@ public class MowerTest {
    public void given_lawn_5_5_mower_0_0_south_forward_expect_0_0() {
 
       Vehicule mower = newMower(0, 0, Orientation.SOUTH);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(0, 0));
@@ -73,7 +73,7 @@ public class MowerTest {
    public void given_lawn_5_5_mower_5_3_east_forward_expect_5_3() {
 
       Vehicule mower = newMower(5, 3, Orientation.EAST);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(5, 3));
@@ -84,7 +84,7 @@ public class MowerTest {
    public void given_lawn_5_5_mower_4_5_north_forward_expect_4_5() {
 
       Vehicule mower = newMower(4, 5, Orientation.NORTH);
-      setup(5, 5, mower);
+      AppFactory.init(5, 5, mower);
       mower.move(Direction.FORWARD);
 
       assertThat(mower.getPosition()).isEqualTo(newPosition(4, 5));

@@ -7,14 +7,14 @@ import com.github.vspiewak.mowitnow.mower.api.Scene;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
+import com.github.vspiewak.mowitnow.mower.config.ConfigBuilder;
+import com.github.vspiewak.mowitnow.mower.config.ConfigFileBuilder;
 import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.domain.XEngine;
-import com.github.vspiewak.mowitnow.mower.setup.AppSetupBuilder;
-import com.github.vspiewak.mowitnow.mower.setup.AppSetupFileBuilder;
 
 /**
- * Application Factory providing facilities for building components
+ * Application Factory providing facilities for building api components
  * 
  * @author Vincent Spiewak
  * @since 1.0
@@ -37,18 +37,18 @@ public final class AppFactory {
       return new Lawn(p);
    }
 
-   /* setup engine and lawn */
-   public static void setup(Scene scene) {
+   /* init engine and lawn */
+   public static void init(Scene scene) {
       Engine engine = XEngine.get();
       engine.clear();
       engine.init(scene);
    }
 
-   /* setup engine, lawn and vehicule(s) */
-   public static void setup(int x, int y, Vehicule... vehicules) {
+   /* init engine, lawn and vehicule(s) */
+   public static void init(int x, int y, Vehicule... vehicules) {
 
-      /* setup engine & lawn */
-      setup(x, y);
+      /* init engine & lawn */
+      init(x, y);
 
       /* add all vehicules */
       for (Vehicule vehicule : vehicules) {
@@ -56,8 +56,8 @@ public final class AppFactory {
       }
    }
    
-   public static AppSetupBuilder newSetupFileBuilder(File file) {
-      return new AppSetupFileBuilder(file);
+   public static ConfigBuilder newConfigFileBuilder(File file) {
+      return new ConfigFileBuilder(file);
    }
    
    /* fattened versions */
@@ -70,8 +70,8 @@ public final class AppFactory {
    }
    
    
-   public static void setup(int x, int y) {
-      setup(newLawn(x, y));
+   public static void init(int x, int y) {
+      init(newLawn(x, y));
    }
 
 

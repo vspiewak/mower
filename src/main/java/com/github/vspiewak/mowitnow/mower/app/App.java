@@ -1,15 +1,15 @@
 package com.github.vspiewak.mowitnow.mower.app;
 
-import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newSetupFileBuilder;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newConfigFileBuilder;
 
 import java.io.File;
 
+import com.github.vspiewak.mowitnow.mower.config.ConfigBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.vspiewak.mowitnow.mower.config.Config;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
-import com.github.vspiewak.mowitnow.mower.setup.AppSetup;
-import com.github.vspiewak.mowitnow.mower.setup.AppSetupBuilder;
 
 /**
  * This is the main entry for the application.
@@ -61,11 +61,11 @@ public final class App {
       /* parse file */
       try {
 
-         AppSetupBuilder build = newSetupFileBuilder(file);
-         build.parse();
+         ConfigBuilder builder = newConfigFileBuilder(file);
+         builder.parse();
 
-         AppSetup setup = build.getSetup();
-         String result = setup.execute();
+         Config config = builder.getConfig();
+         String result = config.execute();
 
          /* log/print the result */
          LOG.info("{}", result);

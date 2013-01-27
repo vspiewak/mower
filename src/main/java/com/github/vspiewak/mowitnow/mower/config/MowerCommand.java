@@ -1,4 +1,4 @@
-package com.github.vspiewak.mowitnow.mower.setup;
+package com.github.vspiewak.mowitnow.mower.config;
 
 import java.util.ArrayList;
 import java.util.List;
