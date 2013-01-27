@@ -1,5 +1,7 @@
 # Mower 
 
+[![Build Status](https://api.travis-ci.org/vspiewak/mower.png?branch=master)](http://travis-ci.org/vspiewak/mover)
+
 This is a mower implementation conform to the specifications provided. 
 It support collision detection (ambiguous requirement).
 I chose an engine-based architecture instead of Subject(Mower)/Observer(Lawn) pattern.
@@ -41,6 +43,11 @@ Javadoc & Sources
 ------------------
 A mower-<version>-sources.jar and mower-<version>-javadoc.jar are generated at package lifecycle.
 You can use them with your favorite IDE. 
+
+
+Continuous Integration
+----------------------
+Continuous integration provided by [Travis-CI.org](https://travis-ci.org)
 
 
 Sonar Statistics
