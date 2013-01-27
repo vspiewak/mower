@@ -1,8 +1,8 @@
 # Mower 
 
-This is a mower implementation, conform to the specifications provided. 
-I chose an engine-based architecture instead of events/exceptions.
-It support collision detection.
+This is a mower implementation conform to the specifications provided. 
+It support collision detection (ambiguous requirement).
+I chose an engine-based architecture instead of Subject(Mower)/Observer(Lawn) pattern.
 
 
 Dependencies
@@ -39,7 +39,6 @@ Feel free to add you own scenarios in the file [app_scenarios.story](src/test/re
 
 Javadoc & Sources
 ------------------
-
 A mower-<version>-sources.jar and mower-<version>-javadoc.jar are generated at package lifecycle.
 You can use them with your favorite IDE. 
 
