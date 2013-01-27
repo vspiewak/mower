@@ -8,6 +8,12 @@ import com.github.vspiewak.mowitnow.mower.base.Rotation;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * This represent a <code>Mower</code> command.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public enum MowerCommand {
 
    ROTATE_LEFT('G'), ROTATE_RIGHT('D'), MOVE_FORWARD('A');
@@ -22,6 +28,12 @@ public enum MowerCommand {
       return this.code;
    }
 
+   /**
+    * Execute a <code>MowerCommand</code> on the given <code>Mower</code>
+    * 
+    * @param mower
+    * @param command
+    */
    public void execute(Mower mower, MowerCommand command) {
 
       switch (command) {

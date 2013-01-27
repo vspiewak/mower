@@ -10,9 +10,15 @@ import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * File based configuration builder.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class AppSetupFileBuilder implements AppSetupBuilder {
 
-   private static final Logger log = LoggerFactory.getLogger(AppSetupBuilder.class);
+   private static final Logger LOG = LoggerFactory.getLogger(AppSetupBuilder.class);
 
    /* UTF-8 only */
    public static final String CHARSET_UTF_8 = "UTF-8";
@@ -26,6 +32,9 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
       this.file = file;
    }
 
+   /**
+    * Parse the file according to the Specifications format
+    */
    @Override
    public void parse() throws ParseException {
 
@@ -79,7 +88,7 @@ public class AppSetupFileBuilder implements AppSetupBuilder {
          }
 
       } catch (Exception e) {
-         log.debug("error: {}", e.getStackTrace());
+         LOG.debug("error: {}", e.getStackTrace());
          throw new ParseException("Exception: " + e.getMessage());
       }
 

@@ -9,11 +9,18 @@ import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.domain.XEngine;
 
+/**
+ * Application Factory providing facilities for building components
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public final class AppFactory {
 
    /* hide utility class constructor */
    private AppFactory() { }
    
+   /* domain factories */
    public static Position newPosition(int x, int y) {
       return new Position(x, y);
    }
@@ -26,24 +33,14 @@ public final class AppFactory {
       return new Lawn(p);
    }
 
+   /* setup engine and lawn */
    public static void setup(Scene scene) {
       Engine engine = XEngine.get();
       engine.clear();
       engine.init(scene);
    }
 
-   public static Vehicule newMower(int x, int y, Orientation o) {
-      return new Mower(newPosition(x, y), o);
-   }
-
-   public static Scene newLawn(int x, int y) {
-      return new Lawn(newPosition(x, y));
-   }
-
-   public static void setup(int x, int y) {
-      setup(newLawn(x, y));
-   }
-
+   /* setup engine, lawn and vehicule(s) */
    public static void setup(int x, int y, Vehicule... vehicules) {
 
       /* setup engine & lawn */
@@ -54,5 +51,20 @@ public final class AppFactory {
          XEngine.get().attach(vehicule);
       }
    }
+   
+   /* fattened versions */
+   public static Vehicule newMower(int x, int y, Orientation o) {
+      return new Mower(newPosition(x, y), o);
+   }
+
+   public static Scene newLawn(int x, int y) {
+      return new Lawn(newPosition(x, y));
+   }
+   
+   
+   public static void setup(int x, int y) {
+      setup(newLawn(x, y));
+   }
+
 
 }

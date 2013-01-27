@@ -4,6 +4,12 @@ import static org.fest.assertions.Assertions.assertThat;
 
 import org.testng.annotations.Test;
 
+/**
+ * Tests for the <code>App</code> class.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class AppTest {
 
    @Test

@@ -11,11 +11,18 @@ import com.github.vspiewak.mowitnow.mower.api.Scene;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 
+/**
+ * The XEngine (stand for X***a) is a simple <code>Engine</code> handling scene bounds and collisions.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public enum XEngine implements Engine {
 
+   /* Singleton using Enum pattern */
    INSTANCE;
 
-   private static final Logger log = LoggerFactory.getLogger(XEngine.class);
+   private static final Logger LOG = LoggerFactory.getLogger(XEngine.class);
 
    private Scene scene;
    private Map<Position, Vehicule> vehicules;
@@ -42,7 +49,7 @@ public enum XEngine implements Engine {
 
       /* add it */
       vehicules.put(position, vehicule);
-      log.debug("add - stack {}", vehicules);
+      LOG.debug("add - stack {}", vehicules);
 
    }
 
@@ -61,18 +68,18 @@ public enum XEngine implements Engine {
 
       /* defensive-way: no update */
       Position returnedPosition = vehicule.getPosition();
-      log.debug("update - from: {} to: {}", vehicule, newPosition);
+      LOG.debug("update - from: {} to: {}", vehicule, newPosition);
 
       /* if outside of scene */
       if (!getScene().canMove(newPosition)) {
 
-         log.warn("scene constraint: {} can't update at {}", vehicule, newPosition);
+         LOG.warn("scene constraint: {} can't update at {}", vehicule, newPosition);
 
          /* if vehicule collision */
       } else if (vehicules.containsKey(newPosition)) {
 
          Vehicule collisionVehicule = vehicules.get(newPosition);
-         log.warn("collision between {} and {}", vehicule, collisionVehicule);
+         LOG.warn("collision between {} and {}", vehicule, collisionVehicule);
 
          /* vehicule is free to update */
       } else {
@@ -83,7 +90,7 @@ public enum XEngine implements Engine {
          returnedPosition = newPosition;
       }
 
-      log.debug("update - return: {}", returnedPosition);
+      LOG.debug("update - return: {}", returnedPosition);
 
       return returnedPosition;
 

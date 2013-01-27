@@ -18,9 +18,15 @@ import com.github.vspiewak.mowitnow.mower.setup.AppSetup;
 import com.github.vspiewak.mowitnow.mower.setup.MowerCommand;
 import com.github.vspiewak.mowitnow.mower.setup.MowerSetup;
 
+/**
+ * JBehave application step builder
+ *  
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class AppSteps extends Embedder {
 
-   private static final Logger log = LoggerFactory.getLogger(AppSteps.class);
+   private static final Logger LOG = LoggerFactory.getLogger(AppSteps.class);
 
    private AppSetup setup = new AppSetup();
    private MowerSetup currentMowerSetup;
@@ -57,9 +63,9 @@ public class AppSteps extends Embedder {
 
       String actual = setup.execute();
 
-      log.info("* JBehave assertion: ");
-      log.info("-> actual:\n{}", actual);
-      log.info("-> expected:\n{}", expected);
+      LOG.info("* JBehave assertion: ");
+      LOG.info("-> actual:\n{}", actual);
+      LOG.info("-> expected:\n{}", expected);
 
       assertThat(actual).isEqualTo(expected);
    }

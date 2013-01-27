@@ -15,10 +15,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * JBehave application scenario.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 /* JUnit-runnable JBehave stories */
 public class AppScenarios extends JUnitStory {
 
-   private static final Logger log = LoggerFactory.getLogger(AppScenarios.class);
+   private static final Logger LOG = LoggerFactory.getLogger(AppScenarios.class);
    
    /* this requires to start maven from the project directory */
    private static final String JBEHAVE_STORIES_URL = "file://"                   
@@ -31,7 +37,7 @@ public class AppScenarios extends JUnitStory {
       try {
          storyURL = new URL(JBEHAVE_STORIES_URL);
       } catch (MalformedURLException e) {
-         log.error("JBehave Stories Malformed URI: ", e);
+         LOG.error("JBehave Stories Malformed URI: ", e);
       }
       return new MostUsefulConfiguration().useStoryLoader(
             new LoadFromRelativeFile(storyURL)).useStoryReporterBuilder(

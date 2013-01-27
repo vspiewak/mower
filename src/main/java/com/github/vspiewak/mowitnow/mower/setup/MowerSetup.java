@@ -5,6 +5,13 @@ import java.util.List;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 
+/**
+ * This represent a <code>Mower</code> configuration.
+ * It include initial position/orientation and commands.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class MowerSetup {
 
    private Position initialPosition;

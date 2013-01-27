@@ -11,6 +11,12 @@ import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * The Mower is a <code>Vehicule</code> implementation.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class Mower implements Vehicule {
 
    /* strongs rules: 
@@ -45,12 +51,6 @@ public class Mower implements Vehicule {
    }
 
    @Override
-   public String print() {
-      return getPosition().getX() + " " + getPosition().getY() + " "
-            + getOrientation().getCode();
-   }
-
-   @Override
    public boolean move(Move m) {
       Position nextPosition = getPosition().next(m, getOrientation());
       this.position = engine.update(this, nextPosition);
@@ -74,6 +74,12 @@ public class Mower implements Vehicule {
       }
 
       throw new ParseException("Parse Mower error: " + s);
+   }
+
+   @Override
+   public String print() {
+      return getPosition().getX() + " " + getPosition().getY() + " "
+            + getOrientation().getCode();
    }
 
    @Override

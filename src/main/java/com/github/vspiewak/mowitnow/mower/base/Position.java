@@ -5,6 +5,13 @@ import java.util.regex.Pattern;
 
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * This class represent a position on a <code>Scene<code>.
+ *  
+ * @author Vincent Spiewak
+ * @see Scene
+ * @since 1.0
+ */
 public class Position {
 
    /* strong rules: start and finish with a number, a single space, a number */

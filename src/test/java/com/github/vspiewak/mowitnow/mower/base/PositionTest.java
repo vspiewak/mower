@@ -7,6 +7,12 @@ import org.testng.annotations.Test;
 
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
+/**
+ * Tests for the <code>Position</code> class.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class PositionTest {
 
    @Test

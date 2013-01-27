@@ -9,6 +9,12 @@ import org.testng.annotations.Test;
 
 import com.github.vspiewak.mowitnow.mower.base.Position;
 
+/**
+ * Tests for the <code>Lawn</code> class.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class LawnTest {
 
    @Test
@@ -65,12 +71,12 @@ public class LawnTest {
 
       return new Object[][] {
 
-      { newPosition(-1, 0) }, 
-      { newPosition(0, -1) }, 
+      { newPosition(-1, 0)  }, 
+      { newPosition(0, -1)  }, 
       { newPosition(-1, -1) },
-      { newPosition(2, 4) }, 
-      { newPosition(3, 4) }, 
-      { newPosition(3, 3) },
+      { newPosition(2, 4)   }, 
+      { newPosition(3, 4)   }, 
+      { newPosition(3, 3)   },
 
       };
    }

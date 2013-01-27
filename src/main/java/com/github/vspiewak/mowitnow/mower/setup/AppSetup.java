@@ -12,9 +12,15 @@ import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
 import com.github.vspiewak.mowitnow.mower.domain.XEngine;
 
+/**
+ * This class represent an application configuration.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class AppSetup {
 
-   private static final Logger log = LoggerFactory.getLogger(AppSetup.class);
+   private static final Logger LOG = LoggerFactory.getLogger(AppSetup.class);
 
    /* CRLF evilness... */
    public static final String LINE_SEPARATOR = System.getProperty("line.separator");

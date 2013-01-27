@@ -13,6 +13,12 @@ import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 
+/**
+ * Tests for the <code>Mower</code> class.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class MowerTest {
 
    @Test()

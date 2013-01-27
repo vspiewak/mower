@@ -3,16 +3,18 @@ package com.github.vspiewak.mowitnow.mower.base;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 /**
- * The Orientation class represent cardinal positions.
- * It's implemented using degree to avoid massive if block and enable support for: 
- * <pre>
- * NORTH_EAST(45, "NE") 
- * NORTH_WEST(135, "NW") 
- * SOUTH_WEST(225, "SW") 
- * SOUTH_EAST(315, "SE")
- * </pre>
- *  
- * @author Vincent Spiewak <vspiewak@gmail.com>
+ * The Orientation represent a classic mathematical unit circle 
+ * (see: <a href="http://en.wikipedia.org/wiki/Unit_circle">Wikipedia</a>).
+ * <br>
+ * It may also support 
+ * <code>
+ * NORTH_EAST(45, "NE"), 
+ * NORTH_WEST(135, "NW"), 
+ * SOUTH_WEST(225, "SW"), 
+ * SOUTH_EAST(315, "SE").
+ * </code>
+ * 
+ * @author Vincent Spiewak
  * @since 1.0
  */
 public enum Orientation {

@@ -16,9 +16,15 @@ import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
 
+/**
+ * Tests for the <code>XEngine</code> class.
+ * 
+ * @author Vincent Spiewak
+ * @since 1.0
+ */
 public class XEngineTest {
 
-   private static Logger log = LoggerFactory.getLogger(XEngineTest.class);
+   private static Logger LOG = LoggerFactory.getLogger(XEngineTest.class);
 
    @Test
    public static void given_the_specs_case_expect_specs_result() {
@@ -53,8 +59,8 @@ public class XEngineTest {
       mower2.rotate(Rotation.RIGHT);
       mower2.move(Move.FORWARD);
 
-      log.debug("Mower1 - {}", mower1);
-      log.debug("Mower2 - {}", mower2);
+      LOG.debug("Mower1 - {}", mower1);
+      LOG.debug("Mower2 - {}", mower2);
 
       assertThat(mower1.print()).isEqualTo("1 3 N");
       assertThat(mower2.print()).isEqualTo("5 1 E");
