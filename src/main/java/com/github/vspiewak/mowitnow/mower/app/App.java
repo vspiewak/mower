@@ -25,7 +25,7 @@ public final class App {
    public static final int EXIT_SUCCESS = 0;
    public static final int EXIT_FAILURE_BAD_ARGS = 1;
    public static final int EXIT_FAILURE_CANT_READ_FILE = 2;
-   private static final int EXIT_FAILURE_PARSE_EXCEPTION = 3;
+   public static final int EXIT_FAILURE_PARSE_EXCEPTION = 3;
 
    /* printed help */
    private static final String HELP_USAGE = "Mower: usage ...";
