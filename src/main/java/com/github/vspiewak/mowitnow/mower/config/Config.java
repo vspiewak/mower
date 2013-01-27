@@ -58,8 +58,9 @@ public class Config {
       for (MowerConfig mowerConfig : mowerConfigList) {
 
          /* init mower */
-         Mower mower = new Mower(mowerConfig.getInitialPosition(),
-               mowerConfig.getInitialOrientation());
+         Mower mower = new Mower(
+                             mowerConfig.getInitialPosition(),
+                             mowerConfig.getInitialOrientation());
 
          /* attach to the engine */
          engine.attach(mower);
