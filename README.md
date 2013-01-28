@@ -41,7 +41,7 @@ You can view JBehave reports at:
 * target/jbehave/view/index.html
 * target/jbehave/view/reports.html
 
-Feel free to write your own scenarios in the file [app_scenarios.story](src/test/resources/stories/com/github/vspiewak/mowitnow/mower/jbehave/app_scenarios.story)
+Feel free to write your own scenarios in the file [app_scenarios.story](https://github.com/vspiewak/mower/blob/master/src/test/resources/stories/com/github/vspiewak/mowitnow/mower/jbehave/app_scenarios.story)
 
 
 Javadoc & Sources JAR
