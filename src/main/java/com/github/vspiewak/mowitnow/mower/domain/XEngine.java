@@ -76,13 +76,13 @@ public enum XEngine implements Engine {
 
          LOG.warn("scene constraint: {} can't update at {}", vehicule, newPosition);
 
-         /* if vehicule collision */
+      /* if vehicule collision */
       } else if (vehicules.containsKey(newPosition)) {
 
          Vehicule collisionVehicule = vehicules.get(newPosition);
          LOG.warn("collision between {} and {}", vehicule, collisionVehicule);
 
-         /* vehicule is free to update */
+      /* vehicule is free to update */
       } else {
 
          /* update vehicule position */

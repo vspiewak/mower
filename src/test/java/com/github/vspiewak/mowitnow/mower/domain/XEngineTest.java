@@ -86,10 +86,10 @@ public class XEngineTest {
    public static void given_a_mower_1_2_N_add_another_at_1_2_N_expect_exception() {
 
       Position position = newPosition(1, 2);
-      AppFactory.init(5,
-              5,
-              new Vehicule[]{newMower(position, Orientation.NORTH),
-                      newMower(position, Orientation.NORTH)});
+      AppFactory.init(5, 5, new Vehicule[] {
+                                              newMower(position, Orientation.NORTH),
+                                              newMower(position, Orientation.NORTH)
+                                            });
 
    }
 

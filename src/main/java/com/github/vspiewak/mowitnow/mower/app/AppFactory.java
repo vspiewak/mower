@@ -73,8 +73,7 @@ public final class AppFactory {
    public static Scene newLawn(int x, int y) {
       return new Lawn(newPosition(x, y));
    }
-   
-   
+
    public static void init(int x, int y) {
       init(newLawn(x, y));
    }
