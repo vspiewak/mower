@@ -32,6 +32,13 @@ public class Position {
       return y;
    }
 
+    /**
+     * Return the next position after a move
+     *
+     * @param direction
+     * @param orientation
+     * @return new position
+     */
    public Position next(Direction direction, Orientation orientation) {
 
       if (direction == null) {
@@ -50,6 +57,13 @@ public class Position {
 
    }
 
+    /**
+     * Return a position from a string representation
+     *
+     * @param s
+     * @return new position
+     * @throws ParseException if malformed string
+     */
    public static Position parsePosition(String s) throws ParseException {
 
       if (s != null) {

@@ -52,6 +52,13 @@ public enum MowerCommand {
 
    }
 
+    /**
+     * Parse a command from char representation
+     *
+     * @param c
+     * @return the mower command
+     * @throws ParseException if unknown command
+     */
    public static MowerCommand parseCommand(char c) throws ParseException {
 
       for (MowerCommand cmd : values()) {
@@ -63,6 +70,13 @@ public enum MowerCommand {
       throw new ParseException("Parse MowerCommand error: " + c);
    }
 
+    /**
+     * Parse commands
+     *
+     * @param s
+     * @return a list of commands
+     * @throws ParseException if unknown command
+     */
    public static List<MowerCommand> parseCommands(String s) throws ParseException {
 
       List<MowerCommand> commands = new ArrayList<MowerCommand>();

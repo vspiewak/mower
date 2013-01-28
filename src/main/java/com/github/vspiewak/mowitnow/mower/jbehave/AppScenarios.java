@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * JBehave application scenario.
+ * JBehave mower application scenario runner.
  * 
  * @author Vincent Spiewak
  * @since 1.0

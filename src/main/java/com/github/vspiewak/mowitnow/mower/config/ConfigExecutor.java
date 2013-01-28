@@ -20,6 +20,11 @@ public class ConfigExecutor {
 
    private List<Mower> mowers = new ArrayList<Mower>();
 
+    /**
+     * Execute sequentially a configuration
+     *
+     * @param config
+     */
    public void execute(Config config) {
 
       /* init engine */
@@ -48,6 +53,11 @@ public class ConfigExecutor {
 
    }
 
+    /**
+     * print all mowers
+     *
+     * @return the string to print
+     */
    public String printMowers() {
 
       StringBuilder result = new StringBuilder();

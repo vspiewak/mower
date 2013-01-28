@@ -37,6 +37,12 @@ public enum Orientation {
       return this.code;
    }
 
+    /**
+     * Return a new orientation after a rotation
+     *
+     * @param rotation to apply
+     * @return new orientation
+     */
    public Orientation rotate(Rotation rotation) {
 
       if (rotation == null) {
@@ -48,7 +54,13 @@ public enum Orientation {
 
    }
 
-   public Orientation fromDegree(final int degree) {
+    /**
+     * Return the cardinal orientation from degree value
+     *
+     * @param degree
+     * @return new orientation
+     */
+   public static Orientation fromDegree(final int degree) {
 
       Orientation values[] = Orientation.values();
       for (int i = 0; i < values.length; i++) {
@@ -60,6 +72,13 @@ public enum Orientation {
       throw new IllegalArgumentException("Unknown orientation with degree: " + degree);
    }
 
+    /**
+     * Parse orientation from a string representation
+     *
+     * @param s input string
+     * @return new orientation
+     * @throws ParseException if malformed string
+     */
    public static Orientation parseOrientation(String s) throws ParseException {
 
       if (s != null && s.length() == 1) {

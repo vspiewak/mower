@@ -20,7 +20,7 @@ import com.github.vspiewak.mowitnow.mower.config.MowerCommand;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 /**
- * JBehave mower application step builder
+ * JBehave mower application steps builder
  *  
  * @author Vincent Spiewak
  * @since 1.0
