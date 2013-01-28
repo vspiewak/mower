@@ -1,10 +1,13 @@
 package com.github.vspiewak.mowitnow.mower.app;
 
 import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newConfigFileBuilder;
+import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newConfigExecutor;
 
 import java.io.File;
 
 import com.github.vspiewak.mowitnow.mower.config.ConfigBuilder;
+import com.github.vspiewak.mowitnow.mower.config.ConfigExecutor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,17 +61,21 @@ public final class App {
          return EXIT_FAILURE_CANT_READ_FILE;
       }
 
-      /* parse file */
       try {
 
+         /* parse configuration */
          ConfigBuilder builder = newConfigFileBuilder(file);
          builder.parse();
 
+         /* retrieve configuration */
          Config config = builder.getConfig();
-         String result = config.execute();
 
+         /* execute configuration */
+         ConfigExecutor executor = newConfigExecutor();
+         executor.execute(config);
+         
          /* log/print the result */
-         LOG.info("{}", result);
+         LOG.info("{}", executor.printMowers());
 
       } catch (ParseException e) {
          LOG.error("Parsing error : " + e);

@@ -4,6 +4,7 @@ import static com.github.vspiewak.mowitnow.mower.app.AppFactory.newPosition;
 import static org.fest.assertions.Assertions.assertThat;
 
 import com.github.vspiewak.mowitnow.mower.config.Config;
+import com.github.vspiewak.mowitnow.mower.config.ConfigExecutor;
 import com.github.vspiewak.mowitnow.mower.config.MowerConfig;
 import org.jbehave.core.annotations.Alias;
 import org.jbehave.core.annotations.Given;
@@ -19,7 +20,7 @@ import com.github.vspiewak.mowitnow.mower.config.MowerCommand;
 import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 /**
- * JBehave application step builder
+ * JBehave mower application step builder
  *  
  * @author Vincent Spiewak
  * @since 1.0
@@ -28,7 +29,7 @@ public class AppSteps extends Embedder {
 
    private static final Logger LOG = LoggerFactory.getLogger(AppSteps.class);
 
-   private Config config = new Config();
+   private Config config;
    private MowerConfig currentMowerConfig;
 
    @Given("a lawn with a top right corner at $x $y")
@@ -61,8 +62,10 @@ public class AppSteps extends Embedder {
    @Alias("it should print $value")
    public void thenAppShouldPrint(@Named("value") String expected) {
 
-      String actual = config.execute();
-
+      ConfigExecutor executor = new ConfigExecutor();
+      executor.execute(config);
+      String actual = executor.printMowers();
+      
       LOG.info("* JBehave assertion: ");
       LOG.info("-> actual:\n{}", actual);
       LOG.info("-> expected:\n{}", expected);

@@ -8,6 +8,7 @@ import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.config.ConfigBuilder;
+import com.github.vspiewak.mowitnow.mower.config.ConfigExecutor;
 import com.github.vspiewak.mowitnow.mower.config.ConfigFileBuilder;
 import com.github.vspiewak.mowitnow.mower.domain.Lawn;
 import com.github.vspiewak.mowitnow.mower.domain.Mower;
@@ -21,7 +22,7 @@ import com.github.vspiewak.mowitnow.mower.domain.XEngine;
  */
 public final class AppFactory {
 
-   /* hide utility class constructor */
+   /* hide factory class constructor */
    private AppFactory() { }
    
    /* domain factories */
@@ -58,6 +59,10 @@ public final class AppFactory {
    
    public static ConfigBuilder newConfigFileBuilder(File file) {
       return new ConfigFileBuilder(file);
+   }
+   
+   public static ConfigExecutor newConfigExecutor() {
+      return new ConfigExecutor();
    }
    
    /* fattened versions */
