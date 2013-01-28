@@ -1,15 +1,11 @@
 package com.github.vspiewak.mowitnow.mower.domain;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.github.vspiewak.mowitnow.mower.api.Engine;
 import com.github.vspiewak.mowitnow.mower.api.Vehicule;
 import com.github.vspiewak.mowitnow.mower.base.Direction;
 import com.github.vspiewak.mowitnow.mower.base.Orientation;
 import com.github.vspiewak.mowitnow.mower.base.Position;
 import com.github.vspiewak.mowitnow.mower.base.Rotation;
-import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
 
 /**
  * The Mower is a <code>Vehicule</code> implementation.
@@ -18,17 +14,6 @@ import com.github.vspiewak.mowitnow.mower.exceptions.ParseException;
  * @since 1.0
  */
 public class Mower implements Vehicule {
-
-   /* strongs rules: 
-    * 
-    * start and finish with:
-    * - a number
-    * - a single space
-    * - a number
-    * - a single space
-    * - N or S or E or W 
-    */
-   private static final Pattern PARSE_PATTERN = Pattern.compile("^(\\d+[ ]\\d+)[ ]([N|S|E|W])$");
 
    private Position position;
    private Orientation orientation;
