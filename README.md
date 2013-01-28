@@ -52,7 +52,7 @@ You can use them with your favorite IDE.
 
 Continuous Integration
 ----------------------
-Continuous integration provided by [Travis-CI.org](https://travis-ci.org)
+Continuous integration provided by [Travis CI.org](https://travis-ci.org)
 
 
 Latest Sonar Statistics
