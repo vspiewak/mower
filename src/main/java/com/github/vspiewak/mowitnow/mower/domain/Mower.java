@@ -62,20 +62,6 @@ public class Mower implements Vehicule {
       this.orientation = getOrientation().rotate(r);
    }
 
-   /* not used yet */
-   public static Mower parseMower(String s) throws ParseException {
-
-      Matcher m = PARSE_PATTERN.matcher(s);
-
-      if (s != null && m.find()) {
-         Position p = Position.parsePosition(m.group(1));
-         Orientation o = Orientation.parseOrientation(m.group(2));
-         return new Mower(p, o);
-      }
-
-      throw new ParseException("Parse Mower error: " + s);
-   }
-
    @Override
    public String print() {
       return getPosition().getX() + " " + getPosition().getY() + " "
