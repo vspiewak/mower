@@ -5,7 +5,7 @@ Mower
 
 Summary
 -------
-This is a my mower implementation (I hope it will not scratch too much your eyes :)
+This is a my mower implementation (I hope it will not scratch too much your eyes :).
 I chose an Engine-based architecture after considering Subject(Mower) / Observer(Lawn) pattern.
 
 Assuming two mowers can't be at the same position (ambiguous requirement),
@@ -57,7 +57,8 @@ Continuous integration provided by [Travis CI.org](https://travis-ci.org)
 
 Latest Sonar Statistics
 -----------------------
-* 1242 lines 
-* 98,7 rules compliances (3 violations)
-* 80,2 units tests coverages
+* 675 lines
+* 99,1 rules compliances (2 violations)
+* 84,3 units tests coverages
+* 0% duplications / pti
 * 100% tests success
