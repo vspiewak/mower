@@ -31,7 +31,7 @@ public final class App {
    public static final int EXIT_FAILURE_PARSE_EXCEPTION = 3;
 
    /* printed help */
-   private static final String HELP_USAGE = "Mower: usage ...";
+   private static final String HELP_USAGE = "Mower: please specify a file.";
 
    /* hide utility class constructor */
    private App() { }
