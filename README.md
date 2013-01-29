@@ -46,7 +46,7 @@ Feel free to write your own scenarios in the file [app_scenarios.story](https://
 
 Javadoc & Sources JAR
 ---------------------
-A mower-<version>-sources.jar and mower-<version>-javadoc.jar are generated at `package` lifecycle.
+A `mower-<version>-sources.jar` and `mower-<version>-javadoc.jar` are generated at `package` lifecycle.
 You can use them with your favorite IDE. 
 
 
