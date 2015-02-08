@@ -44,7 +44,7 @@
       <jbehave.output.dir>jbehave/view</jbehave.output.dir>
 
       <!-- Dependencies versions -->
-      <maven.versions>[2.2.1, 3.1.0)</maven.versions>
+      <maven.versions>[2.2.1,)</maven.versions>
       <java.version>1.6</java.version>
       <slf4j.version>1.6.6</slf4j.version>
       <logback.version>1.0.7</logback.version>
@@ -58,7 +58,7 @@
       <maven.enforcer.plugin>1.0</maven.enforcer.plugin>
       <maven.source.plugin>2.2.1</maven.source.plugin>
       <maven.javadoc.plugin>2.9</maven.javadoc.plugin>
-      <maven.shade.plugin>2.0</maven.shade.plugin>
+      <maven.shade.plugin>2.3</maven.shade.plugin>
       <jbehave.maven.plugin>3.1.2</jbehave.maven.plugin>
       <jbehave.site.plugin>3.1.1</jbehave.site.plugin>
       <eclipse.m2e.plugin>1.0.0</eclipse.m2e.plugin>
